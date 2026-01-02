@@ -1,0 +1,212 @@
+:root {
+  font-family: "Noto Sans JP", system-ui, sans-serif;
+  color: #f5f1e8;
+  background: #161616;
+}
+
+body {
+  margin: 0;
+  background: #0f0f12;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.app-header {
+  background: #1e1e24;
+  padding: 16px 24px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.tab-nav {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.tab-nav button {
+  background: #2a2a33;
+  color: #f5f1e8;
+  border: 1px solid #393945;
+  border-radius: 999px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.tab-nav button.active {
+  background: #c49b4e;
+  color: #121212;
+}
+
+.panel {
+  background: #1c1c22;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.form {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin-bottom: 16px;
+}
+
+input,
+select,
+button {
+  font-size: 1rem;
+}
+
+input,
+select {
+  background: #2a2a33;
+  color: #f5f1e8;
+  border: 1px solid #3c3c48;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+button {
+  background: #d9a75d;
+  color: #1b1b1b;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.conversation-log,
+.log-panel {
+  display: grid;
+  gap: 12px;
+}
+
+.log-entry {
+  background: #2a2a33;
+  padding: 12px;
+  border-radius: 10px;
+  display: grid;
+  gap: 4px;
+}
+
+.quest-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.quest-card {
+  background: #26262f;
+  border-radius: 12px;
+  padding: 16px;
+  display: grid;
+  gap: 8px;
+}
+
+.tag-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.tag,
+.badge {
+  background: #3a3a45;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+}
+
+.badge.rank-rumor {
+  background: #6b7280;
+}
+
+.badge.rank-testimony {
+  background: #3b82f6;
+}
+
+.badge.rank-record {
+  background: #10b981;
+}
+
+.badge.rank-canon {
+  background: #f97316;
+}
+
+.scene-card {
+  background: #242430;
+  padding: 16px;
+  border-radius: 12px;
+  display: grid;
+  gap: 12px;
+}
+
+.check-box {
+  display: grid;
+  gap: 8px;
+}
+
+.check-box label {
+  display: grid;
+  gap: 4px;
+}
+
+.ledger-section {
+  margin-top: 20px;
+  display: grid;
+  gap: 12px;
+}
+
+.ledger-card {
+  background: #242430;
+  padding: 12px;
+  border-radius: 12px;
+  display: grid;
+  gap: 6px;
+}
+
+.console-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.rift-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+  background: #2a2a33;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.darkness {
+  color: #f59e0b;
+  font-weight: 600;
+}
+
+.muted {
+  color: #9ca3af;
+}
+
+.small {
+  font-size: 0.8rem;
+}
+
+.loading {
+  padding: 40px;
+  text-align: center;
+}

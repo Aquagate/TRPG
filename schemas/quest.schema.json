@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quest.schema.json",
+  "title": "Quest",
+  "type": "object",
+  "required": ["id", "title", "issuer", "threadIds", "status", "summary", "scenes", "truthRank", "updatedAt"],
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "title": { "type": "string" },
+    "issuer": { "type": "string" },
+    "threadIds": { "type": "array", "items": { "type": "string", "format": "uuid" } },
+    "status": { "type": "string", "enum": ["available", "accepted", "completed", "failed"] },
+    "summary": { "type": "string" },
+    "truthRank": { "type": "string", "enum": ["Rumor", "Testimony", "Record", "Canon"] },
+    "scenes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "description", "dc", "ability", "skillBonus"],
+        "properties": {
+          "id": { "type": "string", "format": "uuid" },
+          "title": { "type": "string" },
+          "description": { "type": "string" },
+          "dc": { "type": "number" },
+          "ability": { "type": "string" },
+          "skillBonus": { "type": "number" }
+        }
+      }
+    },
+    "updatedAt": { "type": "string", "format": "date-time" }
+  }
+}

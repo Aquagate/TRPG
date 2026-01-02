@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "session.schema.json",
+  "title": "Session",
+  "type": "object",
+  "required": ["id", "level", "logs", "updatedAt"],
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "level": { "type": "number", "enum": [1, 2, 3, 4, 5] },
+    "activeQuestId": { "type": "string", "format": "uuid" },
+    "logs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "message", "createdAt"],
+        "properties": {
+          "id": { "type": "string", "format": "uuid" },
+          "type": { "type": "string", "enum": ["dialogue", "roll", "quest", "system"] },
+          "message": { "type": "string" },
+          "createdAt": { "type": "string", "format": "date-time" }
+        }
+      }
+    },
+    "updatedAt": { "type": "string", "format": "date-time" }
+  }
+}

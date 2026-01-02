@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "fact.schema.json",
+  "title": "Fact",
+  "type": "object",
+  "required": ["id", "text", "rank", "sources", "updatedAt"],
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "text": { "type": "string" },
+    "rank": { "type": "string", "enum": ["Rumor", "Testimony", "Record", "Canon"] },
+    "sources": { "type": "array", "items": { "type": "string" } },
+    "updatedAt": { "type": "string", "format": "date-time" }
+  }
+}

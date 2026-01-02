@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Rift",
+  "type": "object",
+  "required": ["id", "description", "relatedFactIds", "status", "darknessCost", "updatedAt"],
+  "properties": {
+    "id": { "type": "string" },
+    "description": { "type": "string" },
+    "relatedFactIds": { "type": "array", "items": { "type": "string" } },
+    "status": { "type": "string", "enum": ["open", "sealed"] },
+    "darknessCost": { "type": "number", "minimum": 0 },
+    "updatedAt": { "type": "number" }
+  }
+}

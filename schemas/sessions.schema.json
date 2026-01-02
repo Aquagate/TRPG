@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SessionLog",
+  "type": "object",
+  "required": ["id", "lengthLevel", "startedAt", "conversation", "questIds", "checkLogs", "updatedAt"],
+  "properties": {
+    "id": { "type": "string" },
+    "lengthLevel": { "type": "integer", "enum": [1, 2, 3, 4, 5] },
+    "startedAt": { "type": "number" },
+    "conversation": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "speakerId", "text", "createdAt"],
+        "properties": {
+          "id": { "type": "string" },
+          "speakerId": { "type": "string" },
+          "text": { "type": "string" },
+          "createdAt": { "type": "number" }
+        }
+      }
+    },
+    "questIds": { "type": "array", "items": { "type": "string" } },
+    "checkLogs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "questId", "sceneId", "total", "detail", "outcome", "createdAt"],
+        "properties": {
+          "id": { "type": "string" },
+          "questId": { "type": "string" },
+          "sceneId": { "type": "string" },
+          "total": { "type": "number" },
+          "detail": { "type": "string" },
+          "outcome": { "type": "string", "enum": ["success", "fail", "critical", "fumble"] },
+          "createdAt": { "type": "number" }
+        }
+      }
+    },
+    "updatedAt": { "type": "number" }
+  }
+}

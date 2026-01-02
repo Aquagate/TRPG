@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Quest",
+  "type": "object",
+  "required": ["id", "title", "summary", "truthRank", "triggers", "relatedThreadIds", "scenes", "status", "updatedAt"],
+  "properties": {
+    "id": { "type": "string" },
+    "title": { "type": "string" },
+    "summary": { "type": "string" },
+    "truthRank": { "type": "string", "enum": ["Rumor", "Testimony", "Record", "Canon"] },
+    "triggers": { "type": "array", "items": { "type": "string" } },
+    "relatedThreadIds": { "type": "array", "items": { "type": "string" } },
+    "scenes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "text"],
+        "properties": {
+          "id": { "type": "string" },
+          "type": { "type": "string", "enum": ["explore", "combat", "social", "choice", "ritual"] },
+          "text": { "type": "string" },
+          "check": {
+            "type": "object",
+            "required": ["ability", "skillBonus", "dc"],
+            "properties": {
+              "ability": { "type": "string" },
+              "skillBonus": { "type": "number" },
+              "dc": { "type": "number" }
+            }
+          },
+          "options": { "type": "array" }
+        }
+      }
+    },
+    "status": { "type": "string", "enum": ["available", "accepted", "completed"] },
+    "updatedAt": { "type": "number" }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Thread",
+  "type": "object",
+  "required": ["id", "title", "status", "progress", "notes", "updatedAt"],
+  "properties": {
+    "id": { "type": "string" },
+    "title": { "type": "string" },
+    "status": { "type": "string", "enum": ["open", "in_progress", "closed"] },
+    "progress": { "type": "number", "minimum": 0 },
+    "notes": { "type": "array", "items": { "type": "string" } },
+    "updatedAt": { "type": "number" }
+  }
+}

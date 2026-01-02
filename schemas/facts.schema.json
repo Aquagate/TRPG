@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Fact",
+  "type": "object",
+  "required": ["id", "text", "rank", "sources", "updatedAt"],
+  "properties": {
+    "id": { "type": "string" },
+    "text": { "type": "string" },
+    "rank": { "type": "string", "enum": ["Rumor", "Testimony", "Record", "Canon"] },
+    "sources": { "type": "array", "items": { "type": "string" } },
+    "updatedAt": { "type": "number" }
+  }
+}
